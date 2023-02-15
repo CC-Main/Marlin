@@ -669,9 +669,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  14.72 //CCM
-    #define DEFAULT_Ki   0.89 //CCM
-    #define DEFAULT_Kd  61.22 //CCM
+    #define DEFAULT_Kp  29.6379 //CCM
+    #define DEFAULT_Ki   3.1664 //CCM
+    #define DEFAULT_Kd  69.3527 //CCM
   #endif
 #endif
 
@@ -754,9 +754,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 61.93 //CCM
-  #define DEFAULT_bedKi 12.37 //CCM
-  #define DEFAULT_bedKd 206.64 //CCM
+  #define DEFAULT_bedKp 320.7741 //CCM
+  #define DEFAULT_bedKi 60.7527 //CCM
+  #define DEFAULT_bedKd 1129.1249 //CCM
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -1606,7 +1606,7 @@
  * A total of 3 or more adds more slow probes, taking the average.
  */
 #define MULTIPLE_PROBING 2 //CCM
-#define EXTRA_PROBING    1
+#define EXTRA_PROBING    1 //CCM
 
 /**
  * Z probes require clearance when deploying, stowing, and moving between
@@ -1660,10 +1660,10 @@
 //#define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors
 
 // Require minimum nozzle and/or bed temperature for probing
-#define PREHEAT_BEFORE_PROBING
+#define PREHEAT_BEFORE_PROBING //CCM
 #if ENABLED(PREHEAT_BEFORE_PROBING)
   #define PROBING_NOZZLE_TEMP 120   // (°C) Only applies to E0 at this time
-  #define PROBING_BED_TEMP     60
+  #define PROBING_BED_TEMP     60 //CCM
 #endif
 
 // For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
